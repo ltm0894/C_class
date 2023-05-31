@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int fahr;
+	int left;
+	int right;
+	
+	fahr = 100;
+	left = (fahr - 32) * 5 / 9 ;
+	right = ((fahr - 32) * 5000 + 5) / 9 - left * 100;
+	
+	printf("fahr : %d -> celsius : %d.%d\n", fahr, left, right);
+	
+	return 0;
+}

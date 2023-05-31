@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int kor, eng, math;
+	
+	printf("korean : ");
+	scanf("%d", &kor);
+	
+	printf("english : ");
+	scanf("%d", &eng);
+	
+	printf("math : ");
+	scanf("%d", &math);
+	
+	int sum;
+	double avg;
+	
+	sum = kor + eng + math;
+	//avg = sum / 3.0;
+	avg = (double)sum / 3;
+	
+	printf("sum = %d\t average = %.2f\n", sum, avg);
+
+	return 0;
+}

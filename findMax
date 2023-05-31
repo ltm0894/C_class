@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+/*
+int findMax(int *pArr, int size)
+{
+	int max = 0;
+	int i, j;
+	
+	for (i = 0; i < size; ++i){
+		for (j = 0; j < i; ++j){
+			if (pArr[i] > pArr[j]) {
+				max = pArr[i];
+			} else if(pArr[i] < pArr[j]) {
+				max = pArr[j];
+			}
+		}
+	}
+
+	return max;
+}
+*/
+
+int findMax(int *pArr, int size)
+{
+	int max = pArr[0];
+	int i, j;
+	
+	for (i = 0; i < size; ++i){
+			if (max < pArr[i]) {
+				max = pArr[i];
+			}
+	}
+
+	return max;
+}
+
+int main(void)
+{
+	int nums[10] = {50, 30, 100, 10, 20, 90, 80, 40, 60, 70};
+	
+	int max = findMax(nums, 10);
+	
+	printf("max : %d\n", max);
+}

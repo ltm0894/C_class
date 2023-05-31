@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void)
+{
+	int question[3];
+	int count1 = 0;
+	
+	// question[i] <--- computer, random number[1, 9], unique
+	srand(time(NULL));
+	
+	question[0] = rand() % 9 + 1;
+	
+	do {
+		question[1] = rand() % 9 + 1;
+	} while (question[0] == question[1]);
+	
+	do {
+		question[2] = rand() % 9 + 1;
+	} while (question[0] == question[2] || question[1] == question[2]);
+	
+//	printf("question: %d %d %d\n", question[0], question[1], question[2]);
+	
+/*	for (int i = 0; i < 3; ++i){
+		question[i] = rand() % 9 + 1;
+		for (int j = 0; j < i; ++j){
+			if (question[i] == question[j]) {
+				--i;
+			}
+		}
+	}	
+
+	for(int i = 0; i < 3; ++i){
+		printf("%d \n", question[i]);
+	}
+*/
+	
+	// count #strike #ball. compare question array & answer array
+	int strike, ball;
+	strike = 0;
+	ball = 0;
+	
+	int count = 0;
+	while (strike != 3) {
+		strike = ball = 0;
+		
+		int answer[3];
+		//scanf(%d %d %d", ...);
+		for (int i = 0; i < 3; ++i) {
+			printf("input %d numbers: ", i+1);
+			scanf("%d", &answer[i]);
+		}		
+//		for (int i = 0; i < 3; ++i) {
+//			if (question[i] == answer[i]){
+//				++strike;
+//			}
+//			for (int j = 0; j < 3; ++j) {
+//				if (i != j && question[i] == answer[j]){
+//					++ball;
+//				}
+//			}		
+//		}
+		for (int i = 0; i < 3; ++i){
+			for (int j = 0; j < 3; ++j){
+				if (question[i] == answer[j]){
+					if (i == j){
+						++strike;
+					} else {
+						++ball;
+					}
+				}
+			}
+		}
+		++count;
+		//print #strike #ball
+		printf("strike: %d\t ball: %d\n", strike, ball);
+	}
+	// print count
+	printf("count: %d\n", count);
+
+	return 0;
+}

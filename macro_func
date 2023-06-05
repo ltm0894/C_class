@@ -1,0 +1,20 @@
+#include <stdio.h>
+#define SQUARE(a) ((a) * (a))
+
+int square(int i)
+{
+	return i * i;
+}
+
+int main(void)
+{
+	int i = 10;
+	//int result = square(i);		// 10 * 10
+	int result = SQUARE(i);
+	
+	//int result = squeue(++i);		// 11 * 11
+	//int result = SQUEUE(++i);		// ((++i) * (++i))		11 * 12 or 12 * 11 	
+	//printf("result : %d\n", result); // int result = ((i) * (i));
+	
+	return 0;
+}

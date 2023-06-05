@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int GCD(int a, int b)
+{
+/*	int remian = 1;
+	int re = 0;
+	
+	while (remain != 0) {
+		if (a >= b){
+			remain = a % b;
+			a = remain;
+			re = b;
+		} else {
+			remain = b % a;
+			b = remain;
+			re = a;
+		}
+	}
+*/
+	while (b != 0){
+		int remain = a % b;
+		a = b;
+		b = remain;
+	}
+	
+	return a;		// return re;
+}
+
+int main(void)
+{
+	int a, b;
+	printf("input 2 num : ");
+	scanf("%d %d", &a, &b);
+	
+	int result = GCD(a, b);
+	printf("%d and %d GCD : %d\n", a, b, result);
+
+	return 0;
+}

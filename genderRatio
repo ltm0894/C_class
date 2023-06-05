@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int man;
+	int woman;
+	
+	printf("man : ");
+	scanf("%d", &man);
+	
+	printf("woman : ");
+	scanf("%d", &woman);
+	
+	double m_ratio;
+	double w_ratio;
+	
+	m_ratio = (double)man / (man + woman) * 100;
+	//m_ratio = (1.0 * man)/ (man + woman) * 100;
+	//m_ratio = (0.0 + man)/ (man + woman) * 100;
+	w_ratio = (double)woman / (man + woman) * 100;
+	//w_ratio = (1.0 * woman) / (man + woman) * 100;
+	//w_ratio = (0.0 + woman) / (man + woman) * 100;
+	
+	printf("man ratio = %.2f%%, woman ratio = %.2f%%\n", m_ratio, w_ratio);
+	
+	return 0;
+}
